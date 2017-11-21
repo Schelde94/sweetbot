@@ -3,24 +3,63 @@
 <head>
 <meta charset="utf-8">
 <title>sweetbot</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+<!-- loading jQuery from server -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js">
+</script>
+<!-- loading jQuery plugin (https://github.com/flesler/jquery.scrollTo) -->	
+<script type="text/javascript" src="scripts/jquery.scrollTo.min.js"></script>
+<!-- Embedded JS -->
+<script type="text/javascript">
+	// the document.ready function, takes an anonymous function as argument
+	$(document).ready(function(){
+		$("#jsterror").click(myFunction);
+		
+		// implementing the scrollTO plugin
+		
+		$("#stickynav a").click(function(e){
+			e.preventDefault();					
+			$(window).scrollTo(this.hash, 1000);
+		});
+		
+		$("#arrow a").click(function(e){
+			e.preventDefault();					
+			$(window).scrollTo(this.hash, 1000);
+		});
+		
+		fartscroll();
+		
+	// -> end document.ready	
+	});
+	
+	
+	function myFunction(){
+	// A statement, closed with smicolon
+	//standard function alert, taking arguments type string (plain text)
+	// alert("BUUUH!");
+	// opening a new page in a tab
+	window.open("https://jquery.com", "_blank");
+	}
+	//document.getElementById("jsterror").addEventListener("click", myFunction);
+</script>
 </head>
 
 <body>
 	<header>
-    <img src="images/sweetbot-logo.png" width="900" height="194" alt="sweetbot logo"/> </header>
-	<nav>
+	<h1>Noget smart om virksomheden</h1>
+	<div id="arrow"><a href="#stickynav"><img class="arrow" src="images/Arrow-down.svg.png" width="1280" height="747" alt=""/></a></div>
+	</header>s
+	
+	<div class="primary">
+	<nav class="navbar" id="stickynav">
 		<a href="#home">Hjem</a>
 		<a href="#webudvikling">Webudvkling</a>
 		<a href="#security">Digital security</a>
 		<a href="#branding">Branding</a>
 		<a href="#hotbot">HotBot</a>
 	</nav>
-	
-	<section id="home">
-	<h1>Noget spændende om siden</h1>
-	<p>En hel masse pladder om hvor seje Sweetbot egentlig er.</p>
-	</section>
-	
+		
 	<section id="webudvikling">
 	<h1>Webudvikling</h1>
 	<p>Vi har de sejeste webløsninger og laver det flotteste design.</p>
@@ -35,10 +74,22 @@
 		<h1>Branding</h1>
 		<p>Vi kan sælge dit pis på 2 sek. Uden lyv</p>
 	</section>
+		
+		
+</div>
+	
+	
+	<section id="home">
+	<h1>Noget spændende om siden</h1>
+	<p>En hel masse pladder om hvor seje Sweetbot egentlig er.</p>
+	</section>
+	
+	
 	
 	<section id="hotbot">
 		<h1>Hotbot</h1>
 		<p>Her ser vi så en masse billeder af vores ikoner for løsningen. Nu smadrer jeg dig Ditlev!</p>
 	</section>
+	
 </body>
 </html>
